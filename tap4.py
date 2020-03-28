@@ -20,10 +20,12 @@ print("Hora de llegada de " + sdt + ": " + str(ha) + "\n")
 ajuste=(ha-x)/2
 print("Ajuste: "+str(ajuste)+"\n")
 
-reloj=x+ajuste
+reloj=ha+ajuste
+print("Nueva " +str(reloj)+"\n")
 
 
 print("\nAjustando Tiempo:")
 # call("date -u \"" + fecha_hora.strftime("%d %b %Y %H:%M:%S") + "\"",shell = True)
 # call("hwclock --systohc",shell = True)
-os.system(reloj)
+ajustada='date -u "'+str(reloj.strftime("%m%d%H%M%Y.%S"))+'"'
+os.system(ajustada)
